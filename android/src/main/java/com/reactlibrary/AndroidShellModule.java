@@ -1,4 +1,4 @@
-package com.haxorkit.AndroidShell;
+package com.reactlibrary;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -28,7 +28,7 @@ public class AndroidShellModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void executeCommand(final String command, Callback callback) {
-// To avoid UI freezes run in thread 
+    // To avoid UI freezes run in thread 
         new Thread(new Runnable() { 
             public void run() { 
                 OutputStream out = null; 
@@ -68,41 +68,4 @@ public class AndroidShellModule extends ReactContextBaseJavaModule {
             } 
         }).start(); 
     }
-
-    //  public void sampleMethod(String stringArgument, int numberArgument, Callback callback) {
-    //     // TODO: Implement some actually useful functionality
-    //     callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
-    // }
-
-    // public void executeCommand(String command, Callback callback) {
-    //     // TODO: Implement some actually useful functionality
-    //     try {
-    //         Process process = Runtime.getRuntime().exec(command);
-
-    //         StringBuilder output = new StringBuilder();
-
-    //         BufferedReader reader = new BufferedReader(new InputStreamReader (process.getInputStream()));
-
-    //         String line;
-
-    //         while((line = reader.readLine()) != null) {
-    //             output.append(line + "\n");
-    //         }
-
-    //         int exitVal = process.waitFor();
-    //         if (exitVal == 0) {
-    //             // System.out.println(output);
-    //             callback.invoke(output);
-    //             System.exit(0);
-    //         } else {
-    //             callback.invoke("Something abnormal has haapened :( ");
-    //         }
-
-    //     //    return output;
-    //     } catch (IOException e) {
-    //         e.printStackTrace();
-    //     } catch (InterruptedException e) {
-    //         e.printStackTrace();
-    //     }
-    // }
 }
