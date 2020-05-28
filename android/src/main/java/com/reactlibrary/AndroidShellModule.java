@@ -27,7 +27,7 @@ public class AndroidShellModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void executeCommand(final String command, Callback callback) {
+    public void executeCommand(final String command, final Callback callback) {
     // To avoid UI freezes run in thread 
         new Thread(new Runnable() { 
             public void run() { 
@@ -39,13 +39,13 @@ public class AndroidShellModule extends ReactContextBaseJavaModule {
                     // Get input and output streams 
                     out = child.getOutputStream(); 
                     in = child.getInputStream();
-                    //Input stream can return anything
+                    // Input stream can return anything
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in)); 
                     String line; 
                     String result = ""; 
                     while ((line = bufferedReader.readLine()) != null)
                     result += line+"\n";
-                    //Handle input stream returned message
+                    // Handle input stream returned message
                     callback.invoke(result); 
                 } catch (IOException e) { 
                     e.printStackTrace(); 
