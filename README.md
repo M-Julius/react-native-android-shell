@@ -14,6 +14,6 @@ import AndroidShell from 'react-native-android-shell';
 
 // TODO: What to do with the module?
 AndroidShell.executeCommand('your Command', (result) => {
-console.log(result)
+  console.log(result)
 });
 ```
