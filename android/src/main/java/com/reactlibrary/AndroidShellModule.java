@@ -51,18 +51,19 @@ public class AndroidShellModule extends ReactContextBaseJavaModule {
                     e.printStackTrace(); 
                 } finally { 
                     if (in != null) { 
-                    try { 
-                        in.close(); 
-                    } catch (IOException e) { 
-                        e.printStackTrace(); 
+                        try { 
+                            in.close(); 
+                        } catch (IOException e) { 
+                            e.printStackTrace(); 
+                        } 
                     } 
-                    } if (out != null) { 
-                    try { 
-                        out.flush(); 
-                        out.close(); 
-                    } catch (IOException e) { 
-                        e.printStackTrace(); 
-                    } 
+                    if (out != null) { 
+                        try { 
+                            out.flush(); 
+                            out.close(); 
+                        } catch (IOException e) { 
+                            e.printStackTrace(); 
+                        } 
                     } 
                 } 
             } 
