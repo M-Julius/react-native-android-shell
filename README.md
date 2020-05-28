@@ -11,10 +11,6 @@ This module for execute shell android, use command and execute shell
 
 `$ npm install react-native-android-shell --save`
 
-### Mostly automatic installation
-
-`$ react-native link react-native-android-shell`
-
 ## Usage
 ```javascript
 import AndroidShell from 'react-native-android-shell';
