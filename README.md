@@ -51,6 +51,4 @@ class demo extends Component {
 }
 
 export default demo;
-
-});
 ```
