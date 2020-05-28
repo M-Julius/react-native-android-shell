@@ -1,4 +1,5 @@
 # react-native-android-shell
+This module for execute shell android, use command and execute shell
 
 ## Review
 ![Alt text](img/ls.png?raw=true "ls command")
